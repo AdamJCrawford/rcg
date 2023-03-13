@@ -50,7 +50,7 @@ def build_cmake_file(project_name: str, file_and_dependencies: dict[str:list]) -
 
 
 def main() -> None:
-    cwd = os.getcwd()
+    cwd = os.getcwd().replace('\\', '/')
     # Gets the last index of the '\' character and just sets project_name to everything after the last forwardslash in the directory
     project_name = cwd[len(cwd) - cwd[::-1].index('/'):]
     src_dir = cwd + "/src/"
